@@ -26,7 +26,7 @@ def answer_alias(inline_query):
 	bot.answer_inline_query(
 		inline_query_id = inline_query.id,
 		results = [alias_article],
-		cache_time = 0
+		cache_time = 0,
 		switch_pm_text = 'Go to me'
 		)
 
