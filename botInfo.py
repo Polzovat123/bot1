@@ -27,7 +27,7 @@ def answer_alias(inline_query):
 		inline_query_id = inline_query.id,
 		results = [alias_article],
 		cache_time = 0
-		switch_pm_text('Start')
+		switch_pm_text = 'Go to me'
 		)
 
 
