@@ -12,9 +12,9 @@ server = Flask(__name__)
 @bot.message_handler(func=lambda message:True)
 def echo_informatio_user_telegram(message):
 	bot.send_message(chat_id = message.chat.id,
-					text='Id:'+message.from_user.id+"\n First:"+message.from_user.first_name)
+					text='Id:'+str(message.from_user.id)+"\n First:"+str(message.from_user.first_name))
 	bot.send_message(chat_id = message.chat.id,
-					text='Id:'+message.chat.id+"\n First:"+message.chat.first_name)
+					text='Id:'+str(message.chat.id)+"\n First:"+str(message.chat.first_name))
 
 
 
