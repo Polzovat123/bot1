@@ -1,11 +1,33 @@
 import telebot
 from flask import Flask, request
 import os
+from telebot.types import InlineQueryResultArticle
+from telebot.types import InputTextMessageContent
+
+
 
 TOKEN = os.getenv('TOKEN')
 
 bot = telebot.TeleBot(TOKEN)	
 server = Flask(__name__)
+
+@bot.inline_handler(func = lambda query: 'help' in query.query)
+def answer_alias(inline_query):
+	username = inline_query.from_user.username
+	myid = inline_query.from_user.id
+	alias_article = InlineQueryResultArticle(
+		id = '0',
+		title = 'Send my nombEr',
+		description = 'press to me FASST!!!!!',
+		input_message_content = InputTextMessageContent(
+			message_text = f'You`r ali: @{username}'
+			)
+		)
+	bot.answer_inline_query(
+		inline_query_id = inline_query.id,
+		results = [alias_article],
+		cache_time = 0
+		)
 
 
 
