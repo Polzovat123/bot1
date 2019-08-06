@@ -14,7 +14,7 @@ def echo_informatio_user_telegram(message):
 	bot.send_message(chat_id = message.chat.id,
 					text='Id:'+message.from_user.first_name)
 	bot.send_message(chat_id = message.chat.id,
-					text='Id:'+message.from_user.id)
+					text='last_name:'+message.chat.last_name+"\n ")
 
 
 
